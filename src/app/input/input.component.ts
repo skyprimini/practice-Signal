@@ -15,6 +15,8 @@ import { DataServices } from '../data.service';
 })
 export class InputComponent {
   input: string = '';
+  
+  //EventEmitter object for output binding
   @Output() output: EventEmitter<string> = new EventEmitter();
 
   dataService = inject(DataServices);

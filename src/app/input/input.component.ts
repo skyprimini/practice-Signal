@@ -17,11 +17,12 @@ export class InputComponent {
   input: string = '';
   
   //EventEmitter object for output binding
-  @Output() output: EventEmitter<string> = new EventEmitter();
+  //@Output() output: EventEmitter<string> = new EventEmitter();
 
   dataService = inject(DataServices);
 
   sendInput() {
-    this.output.emit(this.input);
+    //this.output.emit(this.input);
+    this.dataService.searchTerm.set(this.input);
   }
 }
